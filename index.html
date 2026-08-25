@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limuel Brasona — The Curious Developer | Portfolio &amp; Journey Log</title>
+    <meta name="description"
+        content="Personal portfolio of Limuel Brasona, a curious developer and student driven by 'Let's see what happens if I try.' Explore projects, learning journeys, tools, and what's next.">
+
+    <!-- Fonts: Syne + Space Grotesk + Plus Jakarta Sans + JetBrains Mono + Caveat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Halftone & Paper Overlay Noise -->
+    <div class="screen-halftone" aria-hidden="true"></div>
+    <div class="screen-vignette" aria-hidden="true"></div>
+
+    <!-- Editorial Top Masthead Bar -->
+    <header class="masthead" id="masthead">
+        <div class="masthead-inner">
+            <div class="masthead-brand">
+                <a href="#hero" class="brand-link">
+                    <span class="brand-kanji" aria-hidden="true">好奇心</span>
+                    <span class="brand-text">LIMUEL BRASONA<span class="gold-dot">.</span></span>
+                </a>
+                <span class="brand-issue">VOL. 01 // DEV LOG</span>
+            </div>
+
+            <!-- Chapter Progress Indicator -->
+            <div class="chapter-tracker" id="chapterTracker">
+                <span class="tracker-label">CURRENT CHAPTER:</span>
+                <span class="tracker-val" id="currentChapterText">00 // PROLOGUE</span>
+                <div class="tracker-bar">
+                    <div class="tracker-fill" id="trackerProgress"></div>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="masthead-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#who-am-i" class="nav-link" data-chapter="01"><span class="nav-num">01.</span> Who I
+                            Am</a></li>
+                    <li><a href="#why-i-learn" class="nav-link" data-chapter="02"><span class="nav-num">02.</span> Why I
+                            Learn</a></li>
+                    <li><a href="#what-i-build" class="nav-link" data-chapter="03"><span class="nav-num">03.</span> What
+                            I Build</a></li>
+                    <li><a href="#arsenal" class="nav-link" data-chapter="04"><span class="nav-num">04.</span>
+                            Tools</a></li>
+                    <li><a href="#logbook" class="nav-link" data-chapter="05"><span class="nav-num">05.</span>
+                            Logbook</a></li>
+                    <li><a href="#whats-next" class="nav-link" data-chapter="06"><span class="nav-num">06.</span> Next
+                            &amp; Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Action Utilities -->
+            <div class="masthead-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme (Paper / Ink)" title="Toggle Theme">
+                    <span class="theme-icon sun-icon" aria-hidden="true">☼</span>
+                    <span class="theme-icon moon-icon" aria-hidden="true">☾</span>
+                    <span class="btn-tooltip">THEME</span>
+                </button>
+
+                <button id="soundToggle" class="icon-btn" aria-label="Toggle Tactile Sounds"
+                    title="Toggle Sound Feedback">
+                    <span class="sound-icon-on" aria-hidden="true">♪</span>
+                    <span class="sound-icon-off" aria-hidden="true">𝄽</span>
+                    <span class="btn-tooltip">SOUND</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Open Navigation Menu"
+                    aria-expanded="false">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+            <div class="mobile-drawer-header">
+                <div class="mobile-stamp">
+                    <span class="stamp-kanji">探求</span>
+                    <span>DEV LOG</span>
+                </div>
+                <button id="mobileCloseBtn" class="mobile-close" aria-label="Close Navigation Menu">✕ CLOSE</button>
+            </div>
+            <nav class="mobile-nav" aria-label="Mobile Navigation">
+                <ul class="mobile-nav-list">
+                    <li><a href="#hero" class="mobile-link"><span class="m-num">00</span> Prologue / Cover</a></li>
+                    <li><a href="#who-am-i" class="mobile-link"><span class="m-num">01</span> Who Am I?</a></li>
+                    <li><a href="#why-i-learn" class="mobile-link"><span class="m-num">02</span> Why I Learn</a></li>
+                    <li><a href="#what-i-build" class="mobile-link"><span class="m-num">03</span> What I Build</a></li>
+                    <li><a href="#arsenal" class="mobile-link"><span class="m-num">04</span> Tools &amp; Stack</a></li>
+                    <li><a href="#logbook" class="mobile-link"><span class="m-num">05</span> Journey Logbook</a></li>
+                    <li><a href="#whats-next" class="mobile-link"><span class="m-num">06</span> What's Next &amp;
+                            Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-drawer-footer">
+                <p class="m-footer-text">"Let's see what happens if I try."</p>
+                <span class="gold-badge">OPEN TO CONNECT</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ===================================================================
+         PROLOGUE / HERO SECTION: THE HUMAN IS THE HERO
+         =================================================================== -->
+        <section class="hero-section" id="hero">
+            <!-- Background Editorial Decors & Registration Marks -->
+            <div class="reg-mark top-left" aria-hidden="true">⊕ REG. 01A</div>
+            <div class="reg-mark top-right" aria-hidden="true">⊕ P.001</div>
+            <div class="reg-mark btm-left" aria-hidden="true">SECTION: PROLOGUE // INTRO</div>
+            <div class="reg-mark btm-right" aria-hidden="true">ARCHIVE NO. 94-26</div>
+
+            <div class="hero-container">
+
+                <!-- Hero Header Typography -->
+                <div class="hero-header-block">
+                    <div class="hero-eyebrow">
+                        <span class="stamp-seal" aria-label="Editorial Seal">
+                            <span class="seal-inner">STUDY<br>&amp; BUILD</span>
+                        </span>
+                        <span class="eyebrow-text">CHAPTER 00 // PORTRAIT OF A LEARNER</span>
+                        <span class="gold-line-decor"></span>
+                    </div>
+
+                    <h1 class="hero-main-title">
+                        <span class="title-sub">LIMUEL BRASONA</span>
+                        <span class="title-highlight">THE CURIOUS DEVELOPER</span>
+                    </h1>
+
+                    <p class="hero-tagline">
+                        <span class="tag-item">CURIOUS</span>
+                        <span class="tag-divider">•</span>
+                        <span class="tag-item">BUILDING</span>
+                        <span class="tag-divider">•</span>
+                        <span class="tag-item">ALWAYS LEARNING</span>
+                    </p>
+                </div>
+
+                <!-- Central Photograph / Hero Anchor -->
+                <div class="hero-portrait-stage">
+
+                    <!-- Editorial annotations around the photograph -->
+                    <div class="photo-annotation note-left">
+                        <span class="note-arrow">↖</span>
+                        <span class="handwritten-note">"I wanted to see if I could build it, so I tried."</span>
+                        <span class="note-meta">MINDSET // DISCOVERY</span>
+                    </div>
+
+                    <div class="photo-annotation note-right">
+                        <span class="note-meta">STATUS: EXPERIMENTING &amp; LEARNING</span>
+                        <span class="handwritten-note">Turning curiosity into real code</span>
+                        <span class="note-arrow">↘</span>
+                    </div>
+
+                    <!-- Main Portrait Frame Container -->
+                    <div class="portrait-card" id="portraitCard">
+                        <!-- Gold Corner Accents -->
+                        <span class="corner-gold top-l" aria-hidden="true"></span>
+                        <span class="corner-gold top-r" aria-hidden="true"></span>
+                        <span class="corner-gold btm-l" aria-hidden="true"></span>
+                        <span class="corner-gold btm-r" aria-hidden="true"></span>
+
+                        <!-- Halftone Border Wrap -->
+                        <div class="portrait-frame">
+                            <div class="portrait-image-wrapper">
+                                <img src="assets/images/2x2.png" alt="Portrait of Limuel Brasona - curious developer"
+                                    class="portrait-img" id="heroPhoto" loading="eager"
+                                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'750\' viewBox=\'0 0 600 750\'><rect width=\'100%25\' height=\'100%25\' fill=\'%23ede8d8\'/><text x=\'50%25\' y=\'45%25\' font-family=\'sans-serif\' font-size=\'28\' font-weight=\'bold\' fill=\'%23121110\' text-anchor=\'middle\'>LIMUEL BRASONA</text><text x=\'50%25\' y=\'52%25\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23c5a059\' text-anchor=\'middle\'>THE CURIOUS DEVELOPER</text></svg>'">
+                                <div class="portrait-grain" aria-hidden="true"></div>
+                                <div class="portrait-halftone-vignette" aria-hidden="true"></div>
+                            </div>
+
+                            <!-- Editorial Photo Footer Metadata -->
+                            <div class="portrait-caption">
+                                <span class="caption-id">SUBJECT: LIMUEL BRASONA</span>
+                                <span class="caption-spec">ROLE: STUDENT &amp; DEVELOPER</span>
+                                <span class="caption-badge">AUTHENTIC // 100% HUMAN</span>
+                            </div>
+                        </div>
+
+                        <!-- Vintage Paper Stamp on Portrait -->
+                        <div class="portrait-stamp" aria-hidden="true">
+                            <span class="stamp-circle">
+                                <span class="stamp-char">学</span>
+                                <span class="stamp-sub">STUDY</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Bottom Editorial Controls & Journey Hook -->
+                <div class="hero-footer-block">
+                    <p class="hero-statement">
+                        "I get curious about how things work, so I sit down and try building them. I make mistakes,
+                        figure out why, and learn as I go."
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#who-am-i" class="btn btn-primary" id="startJourneyBtn">
+                            <span class="btn-icon">⚡</span>
+                            <span class="btn-text">START THE JOURNEY</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="#what-i-build" class="btn btn-secondary">
+                            <span class="btn-text">VIEW WHAT I'VE BUILT</span>
+                            <span class="btn-arrow">↓</span>
+                        </a>
+                    </div>
+
+                    <div class="scroll-cue" aria-hidden="true">
+                        <span class="scroll-label">SCROLL TO TURN PAGE</span>
+                        <div class="scroll-track">
+                            <div class="scroll-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 01 — WHO AM I? (THE HUMAN STORY)
+         =================================================================== -->
+        <section class="chapter-section" id="who-am-i">
+            <div class="section-container">
+
+                <!-- Chapter Header Banner -->
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 01</span>
+                        <span class="chapter-kanji">自己紹介</span>
+                    </div>
+                    <h2 class="chapter-title">WHO AM I?</h2>
+                    <p class="chapter-subtitle">A student and developer who learns best by building things.</p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- Editorial Magazine Spread Layout -->
+                <div class="editorial-grid">
+
+                    <!-- Main Narrative Column -->
+                    <div class="editorial-main-panel">
+                        <div class="panel-tag">NARRATIVE 01 // HOW I GOT STARTED</div>
+
+                        <h3 class="panel-heading">
+                            "I didn't start with a big master plan. <br class="desk-break">I just asked:
+                            <span class="ink-highlight">How does this actually work?</span>"
+                        </h3>
+
+                        <p class="story-lead">
+                            Every project I've started began because I was curious about a mechanic or an idea. I didn't
+                            want to just look at software from the outside—I wanted to open up the editor, write the
+                            code myself, and see what happens.
+                        </p>
+
+                        <p class="story-body">
+                            I'm still learning, experimenting, and improving with every build. I don't pretend to know
+                            everything. When something breaks, that's usually where the most interesting lessons begin.
+                        </p>
+
+                        <div class="quote-box">
+                            <span class="quote-mark">“</span>
+                            <p class="quote-text">
+                                The best way to understand how something works is to try building it yourself.
+                            </p>
+                            <span class="quote-author">— Personal Dev Notes</span>
+                        </div>
+                    </div>
+
+                    <!-- Side Mindset Panel / Manga-inspired Cards -->
+                    <div class="editorial-side-panel">
+                        <div class="panel-tag">CORE PILLARS // HOW I APPROACH THINGS</div>
+
+                        <div class="mindset-stack">
+                            <!-- Card 1 -->
+                            <article class="mindset-card">
+                                <div class="mindset-num">01</div>
+                                <div class="mindset-content">
+                                    <h4 class="mindset-title">Understand the Basics</h4>
+                                    <p class="mindset-desc">
+                                        Frameworks and tools come and go. Understanding basic logic, how things render,
+                                        and how data moves stays with you.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <!-- Card 2 -->
+                            <article class="mindset-card">
+                                <div class="mindset-num">02</div>
+                                <div class="mindset-content">
+                                    <h4 class="mindset-title">Learn from Broken Code</h4>
+                                    <p class="mindset-desc">
+                                        Errors aren't roadblocks. They're just the computer explaining where my
+                                        assumptions were wrong so I can fix them.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <!-- Card 3 -->
+                            <article class="mindset-card">
+                                <div class="mindset-num">03</div>
+                                <div class="mindset-content">
+                                    <h4 class="mindset-title">Care About the Details</h4>
+                                    <p class="mindset-desc">
+                                        Building things is fun. I like paying attention to clean layouts, smooth
+                                        interactions, and making things feel great to use.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Quick Snapshot Box -->
+                        <div class="snapshot-box">
+                            <div class="snapshot-header">
+                                <span class="stamp-tiny">LOG</span>
+                                <span>DEVELOPER PROFILE</span>
+                            </div>
+                            <ul class="snapshot-list">
+                                <li><strong>Current Focus:</strong> Game Development &amp; Web Interfaces</li>
+                                <li><strong>Mindset:</strong> Curious, honest, always learning</li>
+                                <li><strong>Motto:</strong> Get curious. Build it. Learn from it.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 02 — WHY I LEARN (PHILOSOPHY OF EXPERIMENTATION)
+         =================================================================== -->
+        <section class="chapter-section section-contrast" id="why-i-learn">
+            <div class="section-container">
+
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 02</span>
+                        <span class="chapter-kanji">探求心</span>
+                    </div>
+                    <h2 class="chapter-title">WHY I LEARN</h2>
+                    <p class="chapter-subtitle">"Let's see what happens if I try." — The loop of continuous learning.
+                    </p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- The Curiosity Flywheel / Engine Layout -->
+                <div class="flywheel-section">
+                    <div class="flywheel-intro">
+                        <p>
+                            Learning isn't about memorizing syntax. It's an active loop of curiosity, making mistakes,
+                            and figuring things out:
+                        </p>
+                    </div>
+
+                    <div class="flywheel-grid">
+
+                        <div class="flywheel-step" data-step="1">
+                            <div class="step-badge">STAGE 01</div>
+                            <div class="step-icon">?</div>
+                            <h3 class="step-title">The Spark</h3>
+                            <p class="step-desc">
+                                I see an interesting mechanic, a cool layout, or a problem and wonder: "How can I build
+                                that?"
+                            </p>
+                            <div class="step-action">ACTION: ASK QUESTIONS</div>
+                        </div>
+
+                        <div class="step-connector" aria-hidden="true">→</div>
+
+                        <div class="flywheel-step" data-step="2">
+                            <div class="step-badge">STAGE 02</div>
+                            <div class="step-icon">⚡</div>
+                            <h3 class="step-title">The First Build</h3>
+                            <p class="step-desc">
+                                I open the editor and start simple. No overthinking—just getting the initial prototype
+                                running.
+                            </p>
+                            <div class="step-action">ACTION: WRITE CODE</div>
+                        </div>
+
+                        <div class="step-connector" aria-hidden="true">→</div>
+
+                        <div class="flywheel-step" data-step="3">
+                            <div class="step-badge">STAGE 03</div>
+                            <div class="step-icon">⚙</div>
+                            <h3 class="step-title">The Stumble</h3>
+                            <p class="step-desc">
+                                Things break. I inspect error logs, test edge cases, and trace where my logic failed.
+                            </p>
+                            <div class="step-action">ACTION: DEBUG &amp; DIAGNOSE</div>
+                        </div>
+
+                        <div class="step-connector" aria-hidden="true">→</div>
+
+                        <div class="flywheel-step" data-step="4">
+                            <div class="step-badge">STAGE 04</div>
+                            <div class="step-icon">✦</div>
+                            <h3 class="step-title">The Understanding</h3>
+                            <p class="step-desc">
+                                Once it works, I clean up the code, document what went wrong, and remember the lesson.
+                            </p>
+                            <div class="step-action">ACTION: REFLECT &amp; CLEAN UP</div>
+                        </div>
+
+                        <div class="step-connector" aria-hidden="true">→</div>
+
+                        <div class="flywheel-step highlight-step" data-step="5">
+                            <div class="step-badge">STAGE 05</div>
+                            <div class="step-icon">★</div>
+                            <h3 class="step-title">What's Next</h3>
+                            <p class="step-desc">
+                                Solving one problem always sparks two more ideas I want to explore next.
+                            </p>
+                            <div class="step-action">ACTION: TRY THE NEXT THING</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Interactive Notebook Reflection Box -->
+                <div class="notebook-panel">
+                    <div class="notebook-header">
+                        <div class="notebook-tabs" role="tablist">
+                            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-mistakes">
+                                <span>01.</span> On Making Mistakes
+                            </button>
+                            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-unfamiliar">
+                                <span>02.</span> Trying New Tools
+                            </button>
+                            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-practice">
+                                <span>03.</span> Practice &amp; Building
+                            </button>
+                        </div>
+                        <span class="notebook-tag">NOTEBOOK ENTRY // FIELD NOTES</span>
+                    </div>
+
+                    <div class="notebook-body">
+                        <!-- Tab 1 -->
+                        <div class="tab-content active" id="tab-mistakes" role="tabpanel">
+                            <h4 class="notebook-title">"The compiler error is my most honest teacher."</h4>
+                            <p>
+                                When I first started, red terminal errors felt intimidating. Now I realize they're just
+                                the computer giving me clues. Most of what I know came directly from fixing things I
+                                broke.
+                            </p>
+                            <div class="notebook-footer">
+                                <span class="handwritten-accent">Note to self: Don't fear the stack trace.</span>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2 -->
+                        <div class="tab-content" id="tab-unfamiliar" role="tabpanel" hidden>
+                            <h4 class="notebook-title">"Getting confused is just the first step of learning."</h4>
+                            <p>
+                                Whenever I pick up a new tool like Godot or a new language, it feels overwhelming at
+                                first. But pushing through that initial confusion and building a small working project
+                                is the fastest way I've found to grow.
+                            </p>
+                            <div class="notebook-footer">
+                                <span class="handwritten-accent">Curiosity thrives outside the comfort zone.</span>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3 -->
+                        <div class="tab-content" id="tab-practice" role="tabpanel" hidden>
+                            <h4 class="notebook-title">"Tutorials help, but building is where it clicks."</h4>
+                            <p>
+                                Reading documentation and watching videos gives you a map, but the real learning happens
+                                when you close the tutorial, open a blank editor, and write the code yourself.
+                            </p>
+                            <div class="notebook-footer">
+                                <span class="handwritten-accent">Build regularly, even if it's just small
+                                    experiments.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 03 — WHAT I BUILD (THE EVIDENCE OF CURIOSITY)
+         =================================================================== -->
+        <section class="chapter-section" id="what-i-build">
+            <div class="section-container">
+
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 03</span>
+                        <span class="chapter-kanji">作品集</span>
+                    </div>
+                    <h2 class="chapter-title">WHAT I BUILD</h2>
+                    <p class="chapter-subtitle">Projects are not trophies; they are chapters of what I've explored and
+                        learned.</p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- Project Filter / Categorization Bar -->
+                <div class="project-filter-bar">
+                    <span class="filter-label">FILTER BY DOMAIN:</span>
+                    <div class="filter-buttons" role="group" aria-label="Project Filters">
+                        <button class="filter-btn active" data-filter="all">ALL CHAPTERS</button>
+                        <button class="filter-btn" data-filter="game">GAME DEV</button>
+                        <button class="filter-btn" data-filter="upcoming">IN PROGRESS (+)</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid / Editorial Cards -->
+                <div class="projects-grid">
+
+                    <!-- PROJECT 01: NIGHT HARVEST -->
+                    <article class="project-card" data-category="game"
+                        data-tech="Godot GDScript 2D-Tilemaps Pixel-Art Git">
+                        <div class="project-card-header">
+                            <div class="p-header-top">
+                                <span class="p-num">ENTRY 01 // GAME DEVELOPMENT</span>
+                                <span class="p-status">COMPLETED EXPERIMENT</span>
+                            </div>
+                            <h3 class="p-title">NIGHT HARVEST</h3>
+                            <p class="p-genre">2D TOP-DOWN FARMING &amp; SURVIVAL SANDBOX</p>
+                            <blockquote class="p-quote">"I wanted to try making a game, so I started learning Godot and
+                                built a farming survival loop."</blockquote>
+                        </div>
+
+                        <!-- Project Visual Container -->
+                        <div class="p-visual-box">
+                            <div class="p-screen pixel-preview">
+                                <div class="game-demo-mock">
+                                    <div class="mock-grid">
+                                        <div class="mock-tile tile-soil">🌱</div>
+                                        <div class="mock-tile tile-crop">🌾</div>
+                                        <div class="mock-tile tile-water">💧</div>
+                                        <div class="mock-tile tile-player">🧑‍🌾</div>
+                                        <div class="mock-tile tile-night">🌙</div>
+                                        <div class="mock-tile tile-crop">🌽</div>
+                                    </div>
+                                    <div class="mock-hud">
+                                        <span>TIME: 22:45 [NIGHT PHASE]</span>
+                                        <span>ENERGY: 84%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-tags">
+                                <span class="p-tag">Godot Engine</span>
+                                <span class="p-tag">GDScript</span>
+                                <span class="p-tag">2D Tilemaps</span>
+                                <span class="p-tag">Pixel Art</span>
+                            </div>
+                        </div>
+
+                        <!-- The Standardized Story Format -->
+                        <div class="p-breakdown">
+
+                            <div class="breakdown-item">
+                                <h4 class="b-label"><span class="b-icon">🎯</span> WHAT I WANTED TO MAKE</h4>
+                                <p class="b-text">
+                                    A 2D top-down farming game where you plant crops during the day, manage your
+                                    stamina, and protect your harvest from nocturnal hazards.
+                                </p>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <h4 class="b-label"><span class="b-icon">🧠</span> WHAT I LEARNED</h4>
+                                <p class="b-text">
+                                    How Godot's scene tree and nodes work, managing entity states with simple state
+                                    machines, handling 2D tilemaps, and timing crop growth cycles.
+                                </p>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <h4 class="b-label"><span class="b-icon">⚙</span> WHAT I BUILT</h4>
+                                <p class="b-text">
+                                    A playable prototype featuring tile-based farming, day/night ambient lighting
+                                    shifts, an inventory system, and crop growth mechanics.
+                                </p>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <h4 class="b-label"><span class="b-icon">🚀</span> WHAT I'D IMPROVE</h4>
+                                <p class="b-text">
+                                    Clean up how inventory items are passed between nodes, and add more enemy variety
+                                    and seasonal weather effects.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="p-actions">
+                            <button class="btn btn-outline view-details-btn" data-project="nightharvest">
+                                <span>INSPECT DEV NOTES</span> <span>↗</span>
+                            </button>
+                            <a href="https://github.com/limbrasonadev" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-ghost">
+                                <span>VIEW ON GITHUB</span> <span>⌥</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 02: THE PLUS (+) EXPANDABLE SYSTEM -->
+                    <article class="project-card project-card-plus" data-category="upcoming" data-tech="All">
+                        <div class="plus-card-inner">
+                            <div class="plus-icon-wrap" aria-hidden="true">+</div>
+                            <span class="plus-badge">CHAPTER 02 // IN PROGRESS</span>
+                            <h3 class="plus-title">NEXT EXPERIMENT</h3>
+                            <p class="plus-desc">
+                                "I'm currently exploring new ideas and building the next project. When it's ready, it
+                                will be logged right here using this exact same story format."
+                            </p>
+                            <div class="plus-hint-structure">
+                                <span class="plus-status-indicator">● EXPERIMENTS IN PROGRESS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 04 — THE ARSENAL / TOOLS OF EXPLORATION
+         =================================================================== -->
+        <section class="chapter-section section-contrast" id="arsenal">
+            <div class="section-container">
+
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 04</span>
+                        <span class="chapter-kanji">道具箱</span>
+                    </div>
+                    <h2 class="chapter-title">MY ARSENAL</h2>
+                    <p class="chapter-subtitle">"These are tools I learned because I wanted to build something."</p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <div class="arsenal-hint">
+                    <span class="hint-icon">💡</span>
+                    <span>Click any tool below to see where it connects in my projects and studies:</span>
+                </div>
+
+                <!-- Arsenal Categorized Grid -->
+                <div class="arsenal-grid">
+
+                    <!-- Category 1: Web Technologies -->
+                    <div class="arsenal-category">
+                        <div class="category-header">
+                            <span class="cat-num">01</span>
+                            <h3 class="cat-title">WEB CRAFT</h3>
+                            <span class="cat-kanji">ウェブ</span>
+                        </div>
+                        <div class="tool-list">
+
+                            <button class="tool-chip" data-tool="HTML" data-projects="Portfolio">
+                                <span class="tool-name">HTML5</span>
+                                <span class="tool-role">Semantic Layouts</span>
+                                <span class="tool-link">Structure →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="CSS" data-projects="Portfolio">
+                                <span class="tool-name">CSS3 &amp; Grid</span>
+                                <span class="tool-role">Styling &amp; Responsiveness</span>
+                                <span class="tool-link">Layout &amp; Themes →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="JavaScript" data-projects="Portfolio">
+                                <span class="tool-name">JavaScript (ES6+)</span>
+                                <span class="tool-role">DOM &amp; Interactivity</span>
+                                <span class="tool-link">Interactive Logic →</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Game Development -->
+                    <div class="arsenal-category">
+                        <div class="category-header">
+                            <span class="cat-num">02</span>
+                            <h3 class="cat-title">GAME DEV</h3>
+                            <span class="cat-kanji">ゲーム制作</span>
+                        </div>
+                        <div class="tool-list">
+
+                            <button class="tool-chip" data-tool="Godot" data-projects="Night Harvest">
+                                <span class="tool-name">Godot Engine</span>
+                                <span class="tool-role">Scene Graphs &amp; 2D Nodes</span>
+                                <span class="tool-link">Night Harvest →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="GDScript" data-projects="Night Harvest">
+                                <span class="tool-name">GDScript</span>
+                                <span class="tool-role">State Machines &amp; Mechanics</span>
+                                <span class="tool-link">Night Harvest →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="Pixel-Art" data-projects="Night Harvest">
+                                <span class="tool-name">Pixel Art &amp; Sprites</span>
+                                <span class="tool-role">2D Animation &amp; Tiles</span>
+                                <span class="tool-link">Night Harvest →</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Core Programming -->
+                    <div class="arsenal-category">
+                        <div class="category-header">
+                            <span class="cat-num">03</span>
+                            <h3 class="cat-title">PROGRAMMING</h3>
+                            <span class="cat-kanji">開発言語</span>
+                        </div>
+                        <div class="tool-list">
+
+                            <button class="tool-chip" data-tool="Python" data-projects="Studies">
+                                <span class="tool-name">Python 3</span>
+                                <span class="tool-role">Scripting &amp; Fundamentals</span>
+                                <span class="tool-link">Learning Stack →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="C#" data-projects="Studies">
+                                <span class="tool-name">C#</span>
+                                <span class="tool-role">OOP Concepts &amp; Architecture</span>
+                                <span class="tool-link">Learning Stack →</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Tools & Systems -->
+                    <div class="arsenal-category">
+                        <div class="category-header">
+                            <span class="cat-num">04</span>
+                            <h3 class="cat-title">TOOLS &amp; WORKFLOW</h3>
+                            <span class="cat-kanji">基盤ツール</span>
+                        </div>
+                        <div class="tool-list">
+
+                            <button class="tool-chip" data-tool="Git" data-projects="Night Harvest">
+                                <span class="tool-name">Git &amp; GitHub</span>
+                                <span class="tool-role">Version Control &amp; Commits</span>
+                                <span class="tool-link">limbrasonadev →</span>
+                            </button>
+
+                            <button class="tool-chip" data-tool="VS Code" data-projects="Night Harvest">
+                                <span class="tool-name">VS Code</span>
+                                <span class="tool-role">Primary Code Editor</span>
+                                <span class="tool-link">Daily Workspace →</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tool Connected Project Callout Notification -->
+                <div class="tool-feedback-banner" id="toolFeedbackBanner" aria-live="polite">
+                    <span class="tf-icon">⚡</span>
+                    <span class="tf-text" id="toolFeedbackText">Select any tool to trace its connection to a project
+                        above.</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 05 — THE LOGBOOK (PROGRESSION & MILESTONES)
+         =================================================================== -->
+        <section class="chapter-section" id="logbook">
+            <div class="section-container">
+
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 05</span>
+                        <span class="chapter-kanji">航海日誌</span>
+                    </div>
+                    <h2 class="chapter-title">THE LOGBOOK</h2>
+                    <p class="chapter-subtitle">A chronological record of milestones, breakthroughs, and learning
+                        phases.</p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- Timeline / Editorial Logbook Flow -->
+                <div class="logbook-timeline">
+
+                    <!-- Log Entry 01 -->
+                    <div class="log-entry">
+                        <div class="log-meta">
+                            <span class="log-date">PHASE 01</span>
+                            <span class="log-tag">THE FIRST STEPS</span>
+                        </div>
+                        <div class="log-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="log-content">
+                            <h3 class="log-title">Writing My First Lines of Code</h3>
+                            <p class="log-body">
+                                Wrote my first simple scripts. Finding out that websites and programs aren't black
+                                boxes—they're built with human logic that anyone can learn if they're willing to try.
+                            </p>
+                            <div class="log-discovery">
+                                <span class="d-label">KEY TAKEAWAY:</span> Anything built by someone else can be
+                                understood with patience.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Log Entry 02 -->
+                    <div class="log-entry">
+                        <div class="log-meta">
+                            <span class="log-date">PHASE 02</span>
+                            <span class="log-tag">BUILDING FOUNDATIONS</span>
+                        </div>
+                        <div class="log-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="log-content">
+                            <h3 class="log-title">Learning Core Logic &amp; Interactivity</h3>
+                            <p class="log-body">
+                                Moved from basic syntax to understanding functions, variables, and event listeners.
+                                Built small interactive tools and learned how to structure code cleanly.
+                            </p>
+                            <div class="log-discovery">
+                                <span class="d-label">KEY TAKEAWAY:</span> Writing clean, organized code makes debugging
+                                much easier later.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Log Entry 03 -->
+                    <div class="log-entry">
+                        <div class="log-meta">
+                            <span class="log-date">PHASE 03</span>
+                            <span class="log-tag">GAME DEV EXPLORATION</span>
+                        </div>
+                        <div class="log-marker">
+                            <span class="marker-dot"></span>
+                            <span class="marker-line"></span>
+                        </div>
+                        <div class="log-content">
+                            <h3 class="log-title">Diving into Godot &amp; Night Harvest</h3>
+                            <p class="log-body">
+                                Picked up Godot and GDScript to build Night Harvest. Figured out 2D tilemaps, delta
+                                time, collision layers, and simple state machines for crop lifecycles.
+                            </p>
+                            <div class="log-discovery">
+                                <span class="d-label">KEY TAKEAWAY:</span> State machines make real-time games much more
+                                predictable and manageable.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Log Entry 04 -->
+                    <div class="log-entry active-log">
+                        <div class="log-meta">
+                            <span class="log-date">PHASE 04 // PRESENT</span>
+                            <span class="log-tag tag-gold">CURRENT CHAPTER</span>
+                        </div>
+                        <div class="log-marker">
+                            <span class="marker-dot pulsing"></span>
+                        </div>
+                        <div class="log-content">
+                            <h3 class="log-title">Constantly Learning &amp; Building</h3>
+                            <p class="log-body">
+                                Sharpening my frontend craft, exploring web interfaces, diving deeper into game
+                                mechanics, and working on upcoming projects. Excited for what's ahead.
+                            </p>
+                            <div class="log-discovery">
+                                <span class="d-label">STATUS:</span> Hungry to learn, experiment, and collaborate.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================================================================
+         CHAPTER 06 — WHAT'S NEXT? / NEXT EPISODE & CONTACT
+         =================================================================== -->
+        <section class="chapter-section section-contrast" id="whats-next">
+            <div class="section-container">
+
+                <div class="chapter-header">
+                    <div class="chapter-badge">
+                        <span class="chapter-num">CHAPTER 06</span>
+                        <span class="chapter-kanji">次回予告</span>
+                    </div>
+                    <h2 class="chapter-title">WHAT'S NEXT?</h2>
+                    <p class="chapter-subtitle">"The story doesn't end here. It's only getting started."</p>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <!-- Next Episode Manga-style Banner -->
+                <div class="next-episode-card">
+                    <div class="next-ep-header">
+                        <span class="ep-badge">NEXT CHAPTER PREVIEW</span>
+                        <span class="ep-stamp">TO BE CONTINUED...</span>
+                    </div>
+
+                    <div class="next-ep-body">
+                        <h3 class="next-ep-headline">
+                            "I'm still learning. I'm still building. And there is still so much I want to try."
+                        </h3>
+
+                        <div class="episodes-upcoming">
+                            <div class="upcoming-item">
+                                <span class="up-num">01</span>
+                                <div class="up-text">
+                                    <strong>Full-Stack Web Projects</strong>
+                                    <span>Exploring backend APIs, databases, and creating full-featured web
+                                        applications.</span>
+                                </div>
+                            </div>
+
+                            <div class="upcoming-item">
+                                <span class="up-num">02</span>
+                                <div class="up-text">
+                                    <strong>Deeper Game Mechanics</strong>
+                                    <span>Exploring 2D shaders, procedural elements, and improving game feel in
+                                        Godot.</span>
+                                </div>
+                            </div>
+
+                            <div class="upcoming-item">
+                                <span class="up-num">03</span>
+                                <div class="up-text">
+                                    <strong>UI/UX &amp; Creative Web Design</strong>
+                                    <span>Building responsive, accessible web interfaces with clean typography and
+                                        motion.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact & Collaboration Console -->
+                <div class="contact-console" id="contact">
+                    <div class="console-header">
+                        <div class="console-title-group">
+                            <span class="console-led"></span>
+                            <span class="console-title">GET IN TOUCH // OPEN TO CONNECT</span>
+                        </div>
+                        <span class="console-status">STATUS: ONLINE &amp; LISTENING</span>
+                    </div>
+
+                    <div class="console-grid">
+
+                        <!-- Information Pitch -->
+                        <div class="console-pitch">
+                            <h3 class="pitch-title">Let's connect.</h3>
+                            <p class="pitch-text">
+                                If you want to talk about a project, an idea, or something worth learning, I'd be happy
+                                to hear from you. I'm always open to feedback, collaboration, and new opportunities to
+                                build.
+                            </p>
+
+                            <div class="contact-channels">
+                                <div class="channel-row">
+                                    <span class="ch-label">EMAIL:</span>
+                                    <a href="mailto:limuelforwork@gmail.com" class="ch-val">limuelforwork@gmail.com</a>
+                                </div>
+                                <div class="channel-row">
+                                    <span class="ch-label">PHONE:</span>
+                                    <a href="tel:09603637669" class="ch-val">09603637669</a>
+                                </div>
+                                <div class="channel-row">
+                                    <span class="ch-label">GITHUB:</span>
+                                    <a href="https://github.com/limbrasonadev" target="_blank" rel="noopener noreferrer"
+                                        class="ch-val">limbrasonadev</a>
+                                </div>
+                                <div class="channel-row">
+                                    <span class="ch-label">LINKEDIN:</span>
+                                    <a href="https://www.linkedin.com/in/limuel-marcelino-brasona-81a838376/"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="ch-val">limuel-marcelino-brasona</a>
+                                </div>
+                            </div>
+
+                            <div class="availability-badge">
+                                <span class="avail-dot"></span>
+                                <span>Open for internships, projects, &amp; learning opportunities</span>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Message Terminal -->
+                        <div class="console-form-panel">
+                            <form class="transmission-form" id="contactForm"
+                                onsubmit="event.preventDefault(); window.handleTransmission(this);">
+                                <div class="form-group">
+                                    <label for="senderName" class="form-label">YOUR NAME:</label>
+                                    <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderEmail" class="form-label">YOUR EMAIL:</label>
+                                    <input type="email" id="senderEmail" class="form-input"
+                                        placeholder="e.g. alex@example.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderMessage" class="form-label">MESSAGE:</label>
+                                    <textarea id="senderMessage" class="form-textarea" rows="4"
+                                        placeholder="Tell me about what you're working on or exploring..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block" id="sendBtn">
+                                    <span class="btn-icon">✉</span>
+                                    <span class="btn-text">SEND MESSAGE</span>
+                                    <span class="btn-arrow">→</span>
+                                </button>
+
+                                <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===================================================================
+       PROJECT DEEP DIVE MODAL DIALOG
+       =================================================================== -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-dialog">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close Project Details">✕ CLOSE</button>
+            <div class="modal-content-wrapper" id="modalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===================================================================
+       COLOPHON & EDITORIAL FOOTER
+       =================================================================== -->
+    <footer class="editorial-footer">
+        <div class="footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-kanji">好奇心と探求</span>
+                    <h2 class="footer-title">LIMUEL BRASONA</h2>
+                    <p class="footer-quote">"Always learning. Always building. Let's see what happens if I try."</p>
+                </div>
+
+                <div class="footer-back-top">
+                    <a href="#hero" class="back-top-btn" id="backToTopBtn">
+                        <span class="back-arrow">↑</span>
+                        <span>RETURN TO TOP</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <div class="footer-colophon">
+                    <span>CRAFTED WITH VANILLA HTML, CSS &amp; JS.</span>
+                    <span>NO BLOAT. ZERO UNNECESSARY DEPENDENCIES.</span>
+                </div>
+                <div class="footer-copy">
+                    <span>© 2026 LIMUEL BRASONA // THE CURIOUS DEVELOPER</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
