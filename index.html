@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limuel Brasona — The Curious Developer | Portfolio &amp; Journey Log</title>
+    <title>limbrasonadev - Portfolio</title>
     <meta name="description"
         content="Personal portfolio of Limuel Brasona, a curious developer and student driven by 'Let's see what happens if I try.' Explore projects, learning journeys, tools, and what's next.">
 
@@ -157,15 +157,31 @@
 
                     <!-- Editorial annotations around the photograph -->
                     <div class="photo-annotation note-left">
-                        <span class="note-arrow">↖</span>
-                        <span class="handwritten-note">"I wanted to see if I could build it, so I tried."</span>
-                        <span class="note-meta">MINDSET // DISCOVERY</span>
+                        <div class="annotation-content">
+                            <span class="note-meta"><span class="meta-dot" aria-hidden="true"></span> MINDSET //
+                                DISCOVERY</span>
+                            <span class="handwritten-note">"I wanted to see if I could build it, so I tried."</span>
+                        </div>
+                        <svg class="editorial-arrow arrow-left" viewBox="0 0 90 50" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M8,12 C42,12 65,28 78,42" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <polygon points="70,44 84,45 80,32" fill="currentColor" />
+                        </svg>
                     </div>
 
                     <div class="photo-annotation note-right">
-                        <span class="note-meta">STATUS: EXPERIMENTING &amp; LEARNING</span>
-                        <span class="handwritten-note">Turning curiosity into real code</span>
-                        <span class="note-arrow">↘</span>
+                        <svg class="editorial-arrow arrow-right" viewBox="0 0 90 50" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M82,42 C50,42 26,26 12,12" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <polygon points="20,10 6,9 10,22" fill="currentColor" />
+                        </svg>
+                        <div class="annotation-content">
+                            <span class="note-meta"><span class="meta-dot" aria-hidden="true"></span> STATUS // ACTIVE
+                                EXPLORER</span>
+                            <span class="handwritten-note">Turning curiosity into real code.</span>
+                        </div>
                     </div>
 
                     <!-- Main Portrait Frame Container -->
@@ -524,117 +540,14 @@
                     <div class="filter-buttons" role="group" aria-label="Project Filters">
                         <button class="filter-btn active" data-filter="all">ALL CHAPTERS</button>
                         <button class="filter-btn" data-filter="game">GAME DEV</button>
+                        <button class="filter-btn" data-filter="web">WEB CRAFT</button>
                         <button class="filter-btn" data-filter="upcoming">IN PROGRESS (+)</button>
                     </div>
                 </div>
 
                 <!-- Projects Grid / Editorial Cards -->
-                <div class="projects-grid">
-
-                    <!-- PROJECT 01: NIGHT HARVEST -->
-                    <article class="project-card" data-category="game"
-                        data-tech="Godot GDScript 2D-Tilemaps Pixel-Art Git">
-                        <div class="project-card-header">
-                            <div class="p-header-top">
-                                <span class="p-num">ENTRY 01 // GAME DEVELOPMENT</span>
-                                <span class="p-status">COMPLETED EXPERIMENT</span>
-                            </div>
-                            <h3 class="p-title">NIGHT HARVEST</h3>
-                            <p class="p-genre">2D TOP-DOWN FARMING &amp; SURVIVAL SANDBOX</p>
-                            <blockquote class="p-quote">"I wanted to try making a game, so I started learning Godot and
-                                built a farming survival loop."</blockquote>
-                        </div>
-
-                        <!-- Project Visual Container -->
-                        <div class="p-visual-box">
-                            <div class="p-screen pixel-preview">
-                                <div class="game-demo-mock">
-                                    <div class="mock-grid">
-                                        <div class="mock-tile tile-soil">🌱</div>
-                                        <div class="mock-tile tile-crop">🌾</div>
-                                        <div class="mock-tile tile-water">💧</div>
-                                        <div class="mock-tile tile-player">🧑‍🌾</div>
-                                        <div class="mock-tile tile-night">🌙</div>
-                                        <div class="mock-tile tile-crop">🌽</div>
-                                    </div>
-                                    <div class="mock-hud">
-                                        <span>TIME: 22:45 [NIGHT PHASE]</span>
-                                        <span>ENERGY: 84%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-tags">
-                                <span class="p-tag">Godot Engine</span>
-                                <span class="p-tag">GDScript</span>
-                                <span class="p-tag">2D Tilemaps</span>
-                                <span class="p-tag">Pixel Art</span>
-                            </div>
-                        </div>
-
-                        <!-- The Standardized Story Format -->
-                        <div class="p-breakdown">
-
-                            <div class="breakdown-item">
-                                <h4 class="b-label"><span class="b-icon">🎯</span> WHAT I WANTED TO MAKE</h4>
-                                <p class="b-text">
-                                    A 2D top-down farming game where you plant crops during the day, manage your
-                                    stamina, and protect your harvest from nocturnal hazards.
-                                </p>
-                            </div>
-
-                            <div class="breakdown-item">
-                                <h4 class="b-label"><span class="b-icon">🧠</span> WHAT I LEARNED</h4>
-                                <p class="b-text">
-                                    How Godot's scene tree and nodes work, managing entity states with simple state
-                                    machines, handling 2D tilemaps, and timing crop growth cycles.
-                                </p>
-                            </div>
-
-                            <div class="breakdown-item">
-                                <h4 class="b-label"><span class="b-icon">⚙</span> WHAT I BUILT</h4>
-                                <p class="b-text">
-                                    A playable prototype featuring tile-based farming, day/night ambient lighting
-                                    shifts, an inventory system, and crop growth mechanics.
-                                </p>
-                            </div>
-
-                            <div class="breakdown-item">
-                                <h4 class="b-label"><span class="b-icon">🚀</span> WHAT I'D IMPROVE</h4>
-                                <p class="b-text">
-                                    Clean up how inventory items are passed between nodes, and add more enemy variety
-                                    and seasonal weather effects.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="p-actions">
-                            <button class="btn btn-outline view-details-btn" data-project="nightharvest">
-                                <span>INSPECT DEV NOTES</span> <span>↗</span>
-                            </button>
-                            <a href="https://github.com/limbrasonadev" target="_blank" rel="noopener noreferrer"
-                                class="btn btn-ghost">
-                                <span>VIEW ON GITHUB</span> <span>⌥</span>
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- PROJECT 02: THE PLUS (+) EXPANDABLE SYSTEM -->
-                    <article class="project-card project-card-plus" data-category="upcoming" data-tech="All">
-                        <div class="plus-card-inner">
-                            <div class="plus-icon-wrap" aria-hidden="true">+</div>
-                            <span class="plus-badge">CHAPTER 02 // IN PROGRESS</span>
-                            <h3 class="plus-title">NEXT EXPERIMENT</h3>
-                            <p class="plus-desc">
-                                "I'm currently exploring new ideas and building the next project. When it's ready, it
-                                will be logged right here using this exact same story format."
-                            </p>
-                            <div class="plus-hint-structure">
-                                <span class="plus-status-indicator">● EXPERIMENTS IN PROGRESS</span>
-                            </div>
-                        </div>
-                    </article>
-
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Standardized projects & interactive Plus (+) card rendered dynamically via app.js -->
                 </div>
 
             </div>
@@ -1062,6 +975,156 @@
             <div class="modal-content-wrapper" id="modalContent">
                 <!-- Injected via JavaScript -->
             </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+       NEW PROJECT DRAFT / CREATOR WORKBENCH MODAL
+       =================================================================== -->
+    <div class="project-modal new-project-modal" id="newProjectModal" role="dialog" aria-modal="true"
+        aria-hidden="true">
+        <div class="modal-backdrop" id="newProjectBackdrop"></div>
+        <div class="modal-dialog modal-dialog-editor">
+            <button class="modal-close" id="newProjectCloseBtn" aria-label="Close Project Creator">✕ CLOSE</button>
+            <div class="modal-editor-header">
+                <div class="p-header-top">
+                    <span class="p-num">LOGBOOK // NEW CHAPTER DRAFT</span>
+                    <span class="p-status">INTERACTIVE WORKBENCH</span>
+                </div>
+                <h3 class="modal-project-title">LOG A NEW EXPERIMENT</h3>
+                <p class="p-genre">DOCUMENT YOUR CURIOUS CREATIONS USING THE EXACT SAME EDITORIAL STORY ARCHITECTURE</p>
+            </div>
+
+            <form class="new-project-form" id="newProjectForm">
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="npTitle" class="form-label">PROJECT TITLE *</label>
+                        <input type="text" id="npTitle" class="form-input" placeholder="e.g. CANVAS AUDIO SYNTH"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="npCategory" class="form-label">DOMAIN / CATEGORY *</label>
+                        <select id="npCategory" class="form-input form-select" required>
+                            <option value="web" selected>WEB CRAFT</option>
+                            <option value="game">GAME DEV</option>
+                            <option value="system">SYSTEM / TOOLS</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="npGenre" class="form-label">GENRE / SUBTITLE *</label>
+                        <input type="text" id="npGenre" class="form-input"
+                            placeholder="e.g. REAL-TIME AUDIO SYNTHESIS &amp; OSCILLOSCOPE" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="npTechnologies" class="form-label">TECHNOLOGIES (Comma-separated) *</label>
+                        <input type="text" id="npTechnologies" class="form-input"
+                            placeholder="e.g. JavaScript, Web Audio API, Canvas, CSS" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="npQuote" class="form-label">SHORT MOTIVATION / HANDWRITTEN QUOTE *</label>
+                    <input type="text" id="npQuote" class="form-input"
+                        placeholder='e.g. "I wanted to hear how math equations sound when rendered in real time."'
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="npDescription" class="form-label">SHORT OVERVIEW / SUMMARY *</label>
+                    <textarea id="npDescription" class="form-textarea" rows="2"
+                        placeholder="Brief summary of what you set out to explore..." required></textarea>
+                </div>
+
+                <!-- Visual / Image Management -->
+                <div class="form-group">
+                    <label class="form-label">PROJECT MEDIA / PREVIEW IMAGE</label>
+                    <div class="image-uploader-panel">
+                        <div class="image-preview-stage" id="npImagePreviewStage">
+                            <div class="image-empty-placeholder" id="npImagePlaceholder">
+                                <span class="placeholder-icon">📷</span>
+                                <span class="placeholder-text">+ ADD MAIN PROJECT IMAGE</span>
+                                <span class="placeholder-sub">Upload a local file or paste an image URL below</span>
+                            </div>
+                            <img id="npImagePreview" class="image-preview-img" alt="New project preview"
+                                style="display: none;">
+                        </div>
+                        <div class="uploader-inputs">
+                            <input type="url" id="npImageUrl" class="form-input"
+                                placeholder="Paste Image URL (https://...)">
+                            <div class="upload-btn-row">
+                                <label for="npImageFile" class="btn btn-outline btn-sm">
+                                    <span>📁 UPLOAD LOCAL IMAGE</span>
+                                    <input type="file" id="npImageFile" accept="image/*" style="display: none;">
+                                </label>
+                                <button type="button" class="btn btn-ghost btn-sm" id="npClearImageBtn">CLEAR
+                                    IMAGE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The 4 Core Story Pillars -->
+                <div class="editorial-form-fieldset">
+                    <div class="fieldset-header">
+                        <span class="fieldset-badge">ARCHITECTURE</span>
+                        <span class="fieldset-title">THE 4-PART STORY BREAKDOWN</span>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="npWanted" class="form-label"><span class="b-icon">🎯</span> WHAT I WANTED TO
+                                MAKE *</label>
+                            <textarea id="npWanted" class="form-textarea" rows="3"
+                                placeholder="What goal or mechanic sparked this build?" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="npLearned" class="form-label"><span class="b-icon">🧠</span> WHAT I LEARNED
+                                *</label>
+                            <textarea id="npLearned" class="form-textarea" rows="3"
+                                placeholder="What concepts or breakthroughs did you discover?" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="npBuilt" class="form-label"><span class="b-icon">⚙</span> WHAT I BUILT *</label>
+                            <textarea id="npBuilt" class="form-textarea" rows="3"
+                                placeholder="What working features or prototype did you achieve?" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="npImprove" class="form-label"><span class="b-icon">🚀</span> WHAT I'D IMPROVE
+                                *</label>
+                            <textarea id="npImprove" class="form-textarea" rows="3"
+                                placeholder="What would you refine or expand in the next iteration?"
+                                required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="npGithub" class="form-label">GITHUB REPOSITORY URL</label>
+                        <input type="url" id="npGithub" class="form-input"
+                            placeholder="https://github.com/limbrasonadev/...">
+                    </div>
+                    <div class="form-group">
+                        <label for="npLive" class="form-label">LIVE DEMO LINK (Optional)</label>
+                        <input type="url" id="npLive" class="form-input" placeholder="https://...">
+                    </div>
+                </div>
+
+                <div class="modal-form-actions">
+                    <button type="submit" class="btn btn-primary" id="saveProjectBtn">
+                        <span class="btn-icon">✦</span>
+                        <span class="btn-text">SAVE TO PORTFOLIO ARCHIVE</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="cancelProjectBtn">CANCEL</button>
+                </div>
+            </form>
         </div>
     </div>
 
