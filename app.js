@@ -129,33 +129,47 @@
   window.addEventListener('scroll', updateScrollSpy, { passive: true });
   updateScrollSpy();
 
-  // --- MOBILE NAVIGATION DRAWER ---
+  // --- MOBILE NAVIGATION DRAWER (EXPLICIT CLICK ONLY) ---
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const mobileCloseBtn = document.getElementById('mobileCloseBtn');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
+  function isDrawerOpen() {
+    return mobileDrawer && mobileDrawer.classList.contains('open');
+  }
+
   function toggleMobileMenu(open) {
+    if (!mobileDrawer) return;
+    if (typeof open !== 'boolean') {
+      open = !isDrawerOpen();
+    }
     initAudio();
     playTactileClick();
     if (open) {
       mobileDrawer.classList.add('open');
       mobileDrawer.setAttribute('aria-hidden', 'false');
-      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     } else {
       mobileDrawer.classList.remove('open');
       mobileDrawer.setAttribute('aria-hidden', 'true');
-      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
   }
 
   if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => toggleMobileMenu(true));
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu(!isDrawerOpen());
+    });
   }
   if (mobileCloseBtn) {
-    mobileCloseBtn.addEventListener('click', () => toggleMobileMenu(false));
+    mobileCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu(false);
+    });
   }
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => toggleMobileMenu(false));
@@ -1230,9 +1244,10 @@
     });
   }
 
-  // --- GLOBAL KEYBOARD ACCESSIBILITY (ESC CLOSES ALL OPEN MODALS) ---
+  // --- GLOBAL KEYBOARD ACCESSIBILITY (ESC CLOSES ALL OPEN MODALS & DRAWER) ---
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (mobileDrawer && mobileDrawer.classList.contains('open')) toggleMobileMenu(false);
       if (projectModal && projectModal.classList.contains('open')) closeProjectModal();
       if (newProjectModal && newProjectModal.classList.contains('open')) closeNewProjectModal();
       if (ownerGateModal && ownerGateModal.classList.contains('open')) closeOwnerGateModal();
