@@ -673,6 +673,17 @@ button {
   color: var(--gold-primary);
 }
 
+.hero-academic {
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+  font-weight: 500;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
 /* Central Photograph Stage */
 .hero-portrait-stage {
   position: relative;
