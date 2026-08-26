@@ -2471,26 +2471,56 @@ button {
   font-weight: 700;
   border: 2px solid var(--border-strong);
   background: var(--bg-contrast);
+  color: var(--ink-primary);
   padding: 0.35rem 0.75rem;
+  cursor: pointer;
   transition: all var(--transition-fast);
   z-index: 10;
+  box-shadow: 2px 2px 0px var(--border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  line-height: 1;
 }
 
 .modal-close:hover {
   background: var(--vermillion);
+  border-color: var(--vermillion);
   color: #FFF;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-strong);
+}
+
+.modal-close:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-strong);
 }
 
 .modal-project-header {
+  position: relative;
   border-bottom: 2px solid var(--border-strong);
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
+  padding-right: 6rem;
 }
 
 .modal-editor-header {
+  position: relative;
   border-bottom: 2px solid var(--border-strong);
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
+  padding-right: 6rem;
+}
+
+.modal-project-header .p-header-top,
+.modal-editor-header .p-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.4rem;
 }
 
 .modal-project-title {
@@ -3222,6 +3252,18 @@ body.owner-mode-active .card-owner-bar {
     padding: 1.25rem 1rem;
   }
 
+  .modal-close {
+    top: 0.85rem;
+    right: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .modal-project-header,
+  .modal-editor-header {
+    padding-right: 5rem;
+  }
+
   .modal-form-actions {
     flex-direction: column;
     width: 100%;
@@ -3438,6 +3480,18 @@ body.owner-mode-active .card-owner-bar {
     padding: 1.15rem 0.85rem;
   }
 
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.28rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .modal-project-header,
+  .modal-editor-header {
+    padding-right: 4.8rem;
+  }
+
   .modal-project-title {
     font-size: clamp(1.35rem, 5.5vw, 1.8rem);
     overflow-wrap: break-word;
@@ -3489,6 +3543,27 @@ body.owner-mode-active .card-owner-bar {
     padding: 0.65rem 0.85rem;
     font-size: 0.9rem;
   }
+
+  .modal-dialog {
+    padding: 1rem 0.75rem;
+  }
+
+  .modal-close {
+    top: 0.65rem;
+    right: 0.65rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.68rem;
+  }
+
+  .modal-project-header,
+  .modal-editor-header {
+    padding-right: 4.4rem;
+  }
+
+  .modal-project-header .p-header-top,
+  .modal-editor-header .p-header-top {
+    gap: 0.35rem;
+  }
 }
 
 /* Micro-screens (320px to 360px, e.g. narrow viewports, Galaxy Fold/Flip front) */
@@ -3539,6 +3614,18 @@ body.owner-mode-active .card-owner-bar {
 
   .mock-hud {
     font-size: 0.55rem;
+  }
+
+  .modal-close {
+    top: 0.55rem;
+    right: 0.55rem;
+    padding: 0.22rem 0.45rem;
+    font-size: 0.65rem;
+  }
+
+  .modal-project-header,
+  .modal-editor-header {
+    padding-right: 4rem;
   }
 }
 
