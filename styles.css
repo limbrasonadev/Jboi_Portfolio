@@ -3638,3 +3638,40 @@ body.owner-mode-active .card-owner-bar {
     scroll-behavior: auto !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   ARSENAL → PROJECT HIGHLIGHT CONNECTION
+   When a tool chip is clicked, matching project cards glow with a gold border.
+   -------------------------------------------------------------------------- */
+@keyframes toolHighlightPulse {
+  0%   { box-shadow: var(--shadow-editorial), 0 0 0 0 rgba(197, 160, 89, 0.5); }
+  50%  { box-shadow: var(--shadow-editorial), 0 0 0 8px rgba(197, 160, 89, 0); }
+  100% { box-shadow: var(--shadow-editorial), 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+.highlighted-by-tool {
+  border-color: var(--gold-primary) !important;
+  animation: toolHighlightPulse 1.2s ease-out forwards;
+  position: relative;
+}
+
+.highlighted-by-tool::before {
+  content: '⚡ TECH MATCH';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--gold-primary);
+  color: #0F0F11;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.45rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+[data-theme="ink"] .highlighted-by-tool::before {
+  color: #0F0F11;
+}
+

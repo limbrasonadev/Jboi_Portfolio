@@ -775,7 +775,15 @@
 
   // --- ARSENAL INTERACTIVE TOOL LINKS ---
   const toolChips = document.querySelectorAll('.tool-chip');
+  const feedbackBanner = document.getElementById('toolFeedbackBanner');
   const feedbackText = document.getElementById('toolFeedbackText');
+
+  // Project ID → display name mapping for readable banner messages
+  const projectDisplayNames = {
+    'nightharvest': 'Night Harvest',
+    'magbagokana': 'Magbago Ka Na!',
+    'easycert': 'EasyCert',
+  };
 
   toolChips.forEach(chip => {
     chip.addEventListener('click', () => {
@@ -788,29 +796,42 @@
       const toolName = chip.getAttribute('data-tool');
       const connectedProjects = chip.getAttribute('data-projects') || '';
 
+      // Highlight project cards whose data-tech matches this tool
       const projectCards = document.querySelectorAll('.project-card');
-      let matchedCount = 0;
+      let matchedCards = [];
       projectCards.forEach(card => {
         const cardTech = card.getAttribute('data-tech') || '';
         if (cardTech.toLowerCase().includes(toolName.toLowerCase())) {
           card.classList.add('highlighted-by-tool');
-          matchedCount++;
+          matchedCards.push(card);
         } else {
           card.classList.remove('highlighted-by-tool');
         }
       });
 
+      // Build human-readable connected project list from data-projects attribute
+      const projectList = connectedProjects
+        .split(',')
+        .map(s => s.trim())
+        .filter(s => s && s !== 'Studies' && s !== 'Portfolio');
+
       if (feedbackText) {
-        if (connectedProjects.includes('Night Harvest')) {
-          feedbackText.innerHTML = `<strong>${toolName}</strong> was used to build: <span style="color: var(--gold-primary); font-weight: 700;">Night Harvest</span>. Highlighted in the project archive!`;
+        if (projectList.length > 0) {
+          const formatted = projectList
+            .map(n => `<span style="color: var(--gold-primary); font-weight: 700;">${n}</span>`)
+            .join(', ');
+          feedbackText.innerHTML = `<strong>${toolName}</strong> was used to build: ${formatted}. ${matchedCards.length > 0 ? 'Highlighted in the archive above!' : ''}`;
         } else {
-          feedbackText.innerHTML = `<strong>${toolName}</strong> is part of my study workbench and foundation for upcoming projects.`;
+          feedbackText.innerHTML = `<strong>${toolName}</strong> is part of my learning foundation and study workbench — not tied to a specific project yet.`;
         }
       }
 
-      const projectsSec = document.getElementById('what-i-build');
-      if (projectsSec && window.innerWidth < 900) {
-        projectsSec.scrollIntoView({ behavior: 'smooth' });
+      // Always scroll to projects section to see the highlights
+      if (matchedCards.length > 0) {
+        const projectsSec = document.getElementById('what-i-build');
+        if (projectsSec) {
+          projectsSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
