@@ -219,8 +219,8 @@
       quote: 'I wanted to try making a game, so I started learning Godot and built a farming survival loop.',
       description: 'A 2D top-down farming game where you plant crops during the day, manage your stamina, and protect your harvest from nocturnal hazards.',
       isInteractiveMock: true,
-      image: '',
-      gallery: [],
+      image: 'assets/images/magbago kana.png',
+      gallery: ['assets/images/magbago kana.png'],
       wantedToMake: 'A 2D top-down farming game where you plant crops during the day, manage your stamina, and protect your harvest from nocturnal hazards.',
       learned: "How Godot's scene tree and nodes work, managing entity states with simple state machines, handling 2D tilemaps, and timing crop growth cycles.",
       built: 'A playable prototype featuring tile-based farming, day/night ambient lighting shifts, an inventory system, and crop growth mechanics.',
@@ -228,13 +228,67 @@
       technologies: ['Godot Engine', 'GDScript', '2D Tilemaps', 'Pixel Art', 'Git'],
       githubUrl: 'https://github.com/limbrasonadev',
       liveUrl: '',
-      duration: '4-Week Solo Experiment',
+      duration: 'On-Going',
       challenges: [
         'Learning how Godot scene trees and node hierarchies communicate without tangled dependencies.',
         'Setting up day/night ambient lighting shifts and torch light radiuses.',
         'Building a custom tilemap grid with interactive soil states (tilled, watered, planted).'
       ],
       discoveries: 'Building a game made me appreciate clean state management. When entities update every single frame, having simple and decoupled state logic makes debugging so much easier.'
+    },
+    {
+      id: 'magbagokana',
+      chapter: 'ENTRY 02 // MOBILE APP DEVELOPMENT',
+      status: 'ONGOING PROJECT',
+      title: 'MAGBAGO KA NA!',
+      category: 'mobile',
+      genre: 'PERSONAL PRODUCTIVITY & HABIT APP',
+      quote: 'I wanted to create an app that helps people build better habits and stay consistent with their goals.',
+      description: 'A mobile app that helps users manage their habits, daily tasks, money, and personal goals in one place.',
+      isInteractiveMock: false,
+      image: 'assets/images/magbagokana.jpg',
+      gallery: ['assets/images/magbagokana.jpg'],
+      wantedToMake: 'A simple app that helps users organize their daily life, build good habits, manage money, and stay consistent with their goals.',
+      learned: 'How to build a mobile app using React Native and TypeScript, connect it to Supabase, manage user data, and make important features work even without internet.',
+      built: 'A mobile app with daily tasks, habits and streaks, reminders, alarms, money tracking, savings goals, food tracking, activity tracking, progress, and achievements.',
+      improve: 'Improve the alarm system, make the app faster and more reliable, improve the offline experience, and continue polishing the overall design.',
+      technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'AsyncStorage', 'Git'],
+      githubUrl: 'https://github.com/limbrasonadev',
+      liveUrl: '',
+      duration: 'Ongoing Solo Project',
+      challenges: [
+        'Connecting different features while keeping the app simple and easy to use.',
+        'Making alarms and reminders reliable on mobile devices.',
+        'Making the app usable offline and syncing data when the internet comes back.'
+      ],
+      discoveries: 'I learned that building a useful app is not only about adding features. It also needs to be simple, reliable, and easy for people to use every day.'
+    },
+    {
+      id: 'easycert',
+      chapter: 'ENTRY 03 // WEB APPLICATION DEVELOPMENT',
+      status: 'COMPLETED PROJECT',
+      title: 'EASYCERT',
+      category: 'web',
+      genre: 'CERTIFICATE GENERATION & MANAGEMENT SYSTEM',
+      quote: 'I wanted to make certificate creation faster, easier, and more organized for schools, organizations, and events.',
+      description: 'A web application designed to simplify the process of creating, managing, and generating certificates without having to manually design each certificate from scratch.',
+      isInteractiveMock: false,
+      image: 'assets/images/easycert.jpg',
+      gallery: ['assets/images/easycert.jpg'],
+      wantedToMake: 'A simple certificate management system that makes creating and generating certificates faster, more organized, and easier to manage.',
+      learned: 'How to build a complete web application, design a clean and practical user interface, manage certificate data, work with databases, and structure a system around a real-world workflow.',
+      built: 'A web-based certificate system with certificate management, participant information, certificate generation, organized records, and a streamlined workflow for creating certificates.',
+      improve: 'Improve the certificate customization system, add more templates and design options, improve performance, and make the overall certificate generation workflow even faster and easier to use.',
+      technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Figma', 'Git'],
+      githubUrl: 'https://github.com/limbrasonadev',
+      liveUrl: 'https://easy-cert.vercel.app/',
+      duration: 'Completed Solo Project',
+      challenges: [
+        'Designing a certificate workflow that is simple enough for users while still supporting different certificate requirements.',
+        'Managing certificate and participant data while keeping records organized.',
+        'Creating a clean interface that makes certificate generation quick and easy.'
+      ],
+      discoveries: 'I learned that a good system should solve a real problem without making the process more complicated. EasyCert taught me how important usability, organization, and workflow design are when building a practical application.'
     }
   ];
 
@@ -242,7 +296,30 @@
     try {
       const stored = localStorage.getItem('curious_dev_all_projects');
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          let hasUpdates = false;
+          defaultProjects.forEach(def => {
+            const match = parsed.find(p => p.id === def.id);
+            if (match) {
+              if (def.image && (!match.image || match.image !== def.image)) {
+                match.image = def.image;
+                if (!match.gallery || match.gallery.length === 0) {
+                  match.gallery = [def.image];
+                }
+                hasUpdates = true;
+              }
+              if (def.isInteractiveMock !== undefined && match.isInteractiveMock !== def.isInteractiveMock) {
+                match.isInteractiveMock = def.isInteractiveMock;
+                hasUpdates = true;
+              }
+            }
+          });
+          if (hasUpdates) {
+            saveAllProjects(parsed);
+          }
+          return parsed;
+        }
       }
     } catch (e) {
       // Fallback to defaults
@@ -286,7 +363,7 @@
   // 1. Keyboard Shortcut (Ctrl+Shift+O, Cmd+Shift+O, or Alt+O)
   document.addEventListener('keydown', (e) => {
     if ((e.ctrlKey && e.shiftKey && (e.key === 'O' || e.key === 'o')) ||
-        (e.altKey && (e.key === 'O' || e.key === 'o'))) {
+      (e.altKey && (e.key === 'O' || e.key === 'o'))) {
       e.preventDefault();
       initAudio();
       playTactileClick();
@@ -463,7 +540,13 @@
 
       // Visual box rendering
       let visualHtml = '';
-      if (p.isInteractiveMock) {
+      if (p.image) {
+        visualHtml = `
+          <div class="p-screen">
+            <img src="${encodeURI(p.image)}" alt="${p.title} preview" class="p-screen-img" loading="lazy">
+          </div>
+        `;
+      } else if (p.isInteractiveMock) {
         visualHtml = `
           <div class="p-screen pixel-preview">
             <div class="game-demo-mock">
@@ -480,12 +563,6 @@
                 <span>ENERGY: 84%</span>
               </div>
             </div>
-          </div>
-        `;
-      } else if (p.image) {
-        visualHtml = `
-          <div class="p-screen">
-            <img src="${p.image}" alt="${p.title} preview" class="p-screen-img" loading="lazy">
           </div>
         `;
       } else {
@@ -768,13 +845,13 @@
       galleryHtml = `
         <div class="modal-gallery-container">
           <div class="modal-main-image-wrap">
-            <img src="${images[0]}" alt="${data.title}" class="modal-main-image" id="modalMainImg">
+            <img src="${encodeURI(images[0])}" alt="${data.title}" class="modal-main-image" id="modalMainImg">
           </div>
           ${images.length > 1 ? `
             <div class="modal-thumbnails-strip">
               ${images.map((img, i) => `
-                <button type="button" class="modal-thumb-btn ${i === 0 ? 'active' : ''}" data-img="${img}" aria-label="View preview ${i + 1}">
-                  <img src="${img}" alt="Thumbnail ${i + 1}">
+                <button type="button" class="modal-thumb-btn ${i === 0 ? 'active' : ''}" data-img="${encodeURI(img)}" aria-label="View preview ${i + 1}">
+                  <img src="${encodeURI(img)}" alt="Thumbnail ${i + 1}">
                 </button>
               `).join('')}
             </div>
